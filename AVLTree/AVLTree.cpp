@@ -509,16 +509,11 @@ AVLNode * AVLTree::getSuccessor(AVLNode * data)
 	return data;
 }
 
-
-
-AVLTree::~AVLTree()
-{
-}
-
 bool AVLTree::delNode(AVLNode *&T, int data)
 {
 	bool needsUpdate;
-	if (T == NULL) return 0;
+	if (T == NULL) 
+		return false;
 	if (T->data > data)
 	{
 		needsUpdate = delNode(T->pLeft, data);
@@ -619,5 +614,10 @@ bool AVLTree::searchStandFor(AVLNode *&p, AVLNode *&q)
 		q = q->pRight;
 		return true;
 	}
+
+}
+
+AVLTree::~AVLTree()
+{
 
 }
