@@ -605,16 +605,15 @@ bool AVLTree::searchStandFor(AVLNode *&p, AVLNode *&q)
 			rightBalance(p);
 			return false;
 		}
-
 	}
 	else
 	{
+		//swap kieu doi gia tri
 		p->data = q->data;
 		p = q;
 		q = q->pRight;
 		return true;
 	}
-
 }
 
 AVLTree::~AVLTree()

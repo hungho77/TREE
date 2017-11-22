@@ -11,5 +11,4 @@ protected:
 public:
 	virtual BinaryTree();
 	virtual NODE<T> *search(int id) = 0;
-	
 };

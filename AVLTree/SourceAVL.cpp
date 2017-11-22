@@ -13,5 +13,7 @@ int main()
 	tree.insert_nonrecursive(24);
 	tree.insert_nonrecursive(9);
 	tree.remove(24);
+	tree.remove(4);
+	tree.remove(5);
 	return 0;
 }

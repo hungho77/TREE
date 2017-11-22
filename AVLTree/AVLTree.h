@@ -24,14 +24,14 @@ class AVLTree
 	bool delNode(AVLNode *&T, int data);
 	bool searchStandFor(AVLNode *&p, AVLNode *&q);
 	AVLNode *getSuccessor(AVLNode *x);
-public:
-	AVLTree();
-	AVLNode *Search_recursive(int data);
-	AVLNode *Search_nonrecursive(int data);
 	void leftRotate(AVLNode *&p);
 	void rightRotate(AVLNode*& p);
 	void leftBalance(AVLNode *&p);
 	void rightBalance(AVLNode*& p);
+public:
+	AVLTree();
+	AVLNode *Search_recursive(int data);
+	AVLNode *Search_nonrecursive(int data);
 	bool insert_nonrecursive(int data);
 	bool insert_recursive(int data);
 	bool remove(int data);
