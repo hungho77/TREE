@@ -36,6 +36,16 @@ void RBTree::printLNR(RBNode * x)
 	}
 }
 
+void RBTree::RB_removeAll(RBNode * x)
+{
+	if (x != NIL)
+	{
+		RB_removeAll(x->pLeft);
+		RB_removeAll(x->pRight);
+		delete x;
+	}
+}
+
 
 RBNode* RBTree::search(int key)
 {
@@ -201,6 +211,7 @@ void RBTree::RB_remove(RBTree & T, RBNode * z)
 		y->pLeft = z->pLeft;
 		y->pLeft->pParent = z;
 		y->color = z->color;
+		delete z;
 	}
 	if (y_original_color == BLACK)
 		RB_remove_fixup(T, x);
@@ -290,6 +301,11 @@ void RBTree::insert(int key)
 void RBTree::remove(int key)
 {
 	RB_remove(*this, this->search(key));
+}
+
+void RBTree::removeAll()
+{
+	RB_removeAll(this->root);
 }
 
 RBNode * RBTree::sucessor(RBNode * x)

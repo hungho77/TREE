@@ -38,4 +38,6 @@ void main()
 	cout << "Tree after remove.." << endl;
 	T.print();
 	cout << endl;
+	T.removeAll();
+	delete RBTree::NIL;
 }
